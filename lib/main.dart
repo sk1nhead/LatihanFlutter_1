@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -42,21 +44,39 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
 
         child: Column(
-          children: [
-            Expanded(
-              flex: 2,
-            child: Container(
-              padding: const EdgeInsets.symmetric( vertical: 10, horizontal: 20),
-              child: Text('ini text dalam container'), color: Colors.red,
-            ),),
-            const SizedBox(
-              height: 100.0,
+          children:   [
+            const Text("Ini textnya miring", style: TextStyle(fontSize: 20.0, fontStyle: FontStyle.italic ),),
+             const Text("Ini text biasa warna hijau", style: TextStyle(fontSize: 20.0, color: Color(0xFF587846) ),),
+             const Text("Ini textnya biasa tipis", style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w100 ),),
+             const Text("Ini textnya biasa tebal", style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold ),
             ),
-            Expanded(child: Container(
-              color: Colors.blue,
-            )),
+             const SizedBox(
+             height: 20.0, 
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Icon(Icons.home, size: 40,),
+                Icon(Icons.person, size: 30,),
+                Icon(Icons.person, color: Colors.blue,),
+              ],
+            ),
+            const SizedBox( 
+              height: 20.0,
+            ),
+            Container(
+              width: 300,
+              height: 100,
+              child: Image.network("https://images.bisnis-cdn.com/thumb/posts/2021/12/14/1477432/toyota-rush1.jpg?w=744&h=465",
+              fit: BoxFit.scaleDown,
+              ),
+            ),
+            Container(
+              height: 200,
+              width: 350,
+              child: Image.asset("assets/images/IMG_20190711_123103.jpg"),
+            ),
           ],
-
         ),
       ),
     );
