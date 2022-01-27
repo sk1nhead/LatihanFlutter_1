@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.pink,
+        primarySwatch: Colors.green,
       ),
       home: const MyHomePage(title: 'Flutter Latihan'),
     );
@@ -42,42 +42,55 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-
-        child: Column(
-          children:   [
-            const Text("Ini textnya miring", style: TextStyle(fontSize: 20.0, fontStyle: FontStyle.italic ),),
-             const Text("Ini text biasa warna hijau", style: TextStyle(fontSize: 20.0, color: Color(0xFF587846) ),),
-             const Text("Ini textnya biasa tipis", style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w100 ),),
-             const Text("Ini textnya biasa tebal", style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold ),
-            ),
-             const SizedBox(
-             height: 20.0, 
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Icon(Icons.home, size: 40,),
-                Icon(Icons.person, size: 30,),
-                Icon(Icons.person, color: Colors.blue,),
-              ],
-            ),
-            const SizedBox( 
-              height: 20.0,
+        child: Column (
+           children: [
+             Container (
+                padding: const EdgeInsets.all(10),
+                alignment: Alignment.center,
+                child: const Text("NoiseGarage", style: TextStyle(
+                 color: Colors.green,
+                fontSize: 30,
+                fontWeight: FontWeight.w500,
+                       ), ),
+             ),
+            Container(
+                padding: const EdgeInsets.all(10),
+                alignment: Alignment.center,
+                child: const Text("Sign In",style: TextStyle(
+                color: Colors.green,
+                fontWeight: FontWeight.w500,
+                fontSize: 20,
+                ),),
             ),
             Container(
-              width: 300,
-              height: 100,
-              child: Image.network("https://images.bisnis-cdn.com/thumb/posts/2021/12/14/1477432/toyota-rush1.jpg?w=744&h=465",
-              fit: BoxFit.scaleDown,
+                padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+                alignment: Alignment.center,
+                child: const TextField(
+                  decoration: InputDecoration( border: OutlineInputBorder(), labelText: "Username/Email" ),
               ),
             ),
             Container(
-              height: 200,
-              width: 350,
-              child: Image.asset("assets/images/IMG_20190711_123103.jpg"),
+              padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+              alignment: Alignment.center,
+              child: const TextField(
+                obscureText: true,
+                decoration: InputDecoration( border: OutlineInputBorder(), labelText: "Password"),
+              ),
             ),
-          ],
-        ),
+             Container(
+               padding: const EdgeInsets.all(10),
+               alignment: Alignment.center,
+               child:  ElevatedButton(
+                 onPressed: () {
+
+                 },
+                 child: const Text("Sign In"),
+               )
+             ),
+          
+      ],
+
+      ),
       ),
     );
   }
