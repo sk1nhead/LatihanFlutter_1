@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.pink,
+        primarySwatch: Colors.green,
       ),
       home: const MyHomePage(title: 'Flutter Latihan'),
     );
@@ -40,24 +42,55 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-
-        child: Column(
-          children: [
-            Expanded(
-              flex: 2,
-            child: Container(
-              padding: const EdgeInsets.symmetric( vertical: 10, horizontal: 20),
-              child: Text('ini text dalam container'), color: Colors.red,
-            ),),
-            const SizedBox(
-              height: 100.0,
+        child: Column (
+           children: [
+             Container (
+                padding: const EdgeInsets.all(10),
+                alignment: Alignment.center,
+                child: const Text("NoiseGarage", style: TextStyle(
+                 color: Colors.green,
+                fontSize: 30,
+                fontWeight: FontWeight.w500,
+                       ), ),
+             ),
+            Container(
+                padding: const EdgeInsets.all(10),
+                alignment: Alignment.center,
+                child: const Text("Sign In",style: TextStyle(
+                color: Colors.green,
+                fontWeight: FontWeight.w500,
+                fontSize: 20,
+                ),),
             ),
-            Expanded(child: Container(
-              color: Colors.blue,
-            )),
-          ],
+            Container(
+                padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+                alignment: Alignment.center,
+                child: const TextField(
+                  decoration: InputDecoration( border: OutlineInputBorder(), labelText: "Username/Email" ),
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+              alignment: Alignment.center,
+              child: const TextField(
+                obscureText: true,
+                decoration: InputDecoration( border: OutlineInputBorder(), labelText: "Password"),
+              ),
+            ),
+             Container(
+               padding: const EdgeInsets.all(10),
+               alignment: Alignment.center,
+               child:  ElevatedButton(
+                 onPressed: () {
 
-        ),
+                 },
+                 child: const Text("Sign In"),
+               )
+             ),
+          
+      ],
+
+      ),
       ),
     );
   }
